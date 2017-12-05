@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# Version 2014.02.10.01
+
+CACHE:
+index.html
+manifest.json
+css/main.css
+css/colors.css
+js/pouchdb-6.3.4.min.js
+js/pouch-db-min-full-sync.js
+js/pouchdb.authentication.js
+js/application.js
+js/api.js
+js/gapi.js
+js/resp-header.js
+favicon.ico
+img/searchws.png
+img/logo-brookes.png
+apple-touch-icon.png
+favicon-32x32.png
+favicon-16x16.png
+
+NETWORK:
+*

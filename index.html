@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-gb" manifest="pouchnotes.manifest">
+<head>
+	<meta charset="utf-8" />
+
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<title>Contacts</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/colors.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#ffffff">
+	<link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <!--index.html STANDARD ENV-->
+    <header class="header" role="banner">
+		<section id="login" class="right">
+			<button id="authorize-button" style="display: none;">Log in</button>
+			<button id="signout-button" style="display: none;">Log out</button>
+		</section>
+		<div id="title" class="sitename">
+			<h1>Contacts</h1>
+		</div>
+	</header>
+    <main id="main">
+	<nav id="edit">
+		<button type="button" class="clicktarget" data-action="viewnoteset" data-show="#allnotes" data-hide="section:not(#allnotes)">View Contacts</button>
+		<button type="button" class="clicktarget" data-show="#addnote" data-hide="section:not(#addnote)">Add Contact</button>
+		<button id="syncbutton" class="clicktarget" type="button" data-action="syncnoteset" data-hide="section:not(#addnote)">Sync Contacts</button>            
+
+	</nav>
+		<div id="content"></div>
+        <section id="addnote">
+        <form id="noteform" method="post" data-show="#allnotes" data-hide="#addnote">
+            <div class="hide" id="buttonwrapper">
+                <button class="clicktarget edit" type="button">Edit Contact</button>
+                <button class="clicktarget delete" type="button">Delete Contact</button>
+            </div>
+            <p>
+                <input type="hidden" id="_rev" name="_rev" value="">
+                <input type="hidden" id="_id"  name="_id" value="">
+                <label class="text-label" for="name">Contact's name:</label>
+                <input type="text" id="name" name="name" placeholder="Name of Contact" value="">
+            </p>
+            <p>
+                <label class="text-label" for="jobtitle">Job title:</label>
+                <input type="text" id="jobtitle" name="jobtitle" placeholder="Job title" value="">
+            </p>
+            <p>
+                <label class="text-label" for="level">Level:</label>
+                <select id="level" name="level">
+					<option value="Bronze">Bronze</option>
+					<option value="Silver">Silver</option>
+					<option value="Gold">Gold</option>
+				</select>
+            </p>
+            <p class="rel hide" style="display:none">
+                <input type="file" id="attachment" name="attachment" class="abs">
+                <label for="attachment" class="btn">Attachment(s):</label>
+                <span class="filelist"></span>
+    	    </p>
+            <div id="attachments" class="hide" style="display:none">
+            	<h2>Attachments</h2>
+    	    	<ul id="attachmentlist"></ul>
+    	    </div>
+            <p>
+                <label class="text-label" for="mobile1">Mobile 1:</label>
+                <input type="tel" id="mobile1" name="mobile1" placeholder="Mobile #1" value=""><a href="" class="interactive"></a>
+            </p>
+            <p>
+                <label class="text-label" for="mobile2">Mobile 2:</label>
+                <input type="tel" id="mobile2" name="mobile2" placeholder="Mobile #2" value=""><a href="" class="interactive"></a>
+            </p>
+            <p>
+                <label class="text-label" for="home">Home number:</label>
+                <input type="tel" id="home" name="home" placeholder="Home number" value=""><a href="" class="interactive"></a>
+            </p>
+            <p>
+                <label class="text-label" for="work">Work number:</label>
+                <input type="tel" id="work" name="work" placeholder="Work number" value=""><a href="" class="interactive"></a>
+            </p>
+            <p>
+                <label class="text-label" for="home_email">Home email:</label>
+                <input type="email" id="home_email" name="home_email" placeholder="Home email address" value=""><a href="" class="interactive"></a>
+            </p>
+            <p>
+                <label class="text-label" for="work_email">Work email:</label>
+                <input type="email" id="work_email" name="work_email" placeholder="Work email address" value=""><a href="" class="interactive"></a>
+            </p>
+    	    <p>
+                <label class="text-label" for="campus">Campus:</label>
+                <select id="campus" name="campus">
+					<option value="Harcourt Hill">Harcourt Hill</option>
+					<option value="Headington">Headington</option>
+					<option value="Marston">Marston</option>
+					<option value="Swindon">Swindon</option>
+					<option value="Wheatley">Wheatley</option>
+				</select>
+			</p>
+    	    <p>
+                <label class="text-label" for="building">Building:</label>
+                <select id="building" name="building">
+					<option value="A Building (AHH)">A Building (AHH)</option>
+					<option value="Abercrombie (ABR)">Abercrombie (ABR)</option>
+					<option value="B Block (BBW)">B Block (BBW)</option>
+					<option value="B Building (BHH)">B Building (BHH)</option>
+					<option value="Buckley (BCK)">Buckley (BCK)</option>
+					<option value="C Building (CHH)">C Building (CHH)</option>
+					<option value="CBW (CBW)">CBW (CBW)</option>
+					<option value="Clerici (CLE)">Clerici (CLE)</option>
+					<option value="Dora Cohen Hall (DCH)">Dora Cohen Hall (DCH)</option>
+					<option value="DSG01 (DRA)">DSG01 (DRA)</option>
+					<option value="E Building (EHH)">E Building (EHH)</option>
+					<option value="EBW (EBW)">EBW (EBW)</option>
+					<option value="ELW (ELW)">ELW (ELW)</option>
+					<option value="F Building (FHH)">F Building (FHH)</option>
+					<option value="Fuller (FUL)">Fuller (FUL)</option>
+					<option value="G Block (GBW)">G Block (GBW)</option>
+					<option value="G Building (GHH)">G Building (GHH)</option>
+					<option value="Gibbs (GIB)">Gibbs (GIB)</option>
+					<option value="H Block (HBW)">H Block (HBW)</option>
+					<option value="Headington Hill Hall (HHH)">Headington Hill Hall (HHH)</option>
+					<option value="J Building (JHH)">J Building (JHH)</option>
+					<option value="JCR (JCR)">JCR (JCR)</option>
+					<option value="JHB (JHB)">JHB (JHB)</option>
+					<option value="Joel Joffe (JJB)">Joel Joffe (JJB)</option>
+					<option value="K Building (KHH)">K Building (KHH)</option>
+					<option value="L Building (LHH)">L Building (LHH)</option>
+					<option value="Lloyd (LLD)">Lloyd (LLD)</option>
+					<option value="M Building (MHH)">M Building (MHH)</option>
+					<option value="Marston G (MRG)">Marston G (MRG)</option>
+					<option value="Marston M (MRM)">Marston M (MRM)</option>
+					<option value="O'Regan (O'Regan)">O'Regan (O'Regan)</option>
+					<option value="Post Graduate Centre (PGC)">Post Graduate Centre (PGC)</option>
+					<option value="R Block (RBW)">R Block (RBW)</option>
+					<option value="Red Oak (RED)">Red Oak (RED)</option>
+					<option value="Richard Hamilton (RHM)">Richard Hamilton (RHM)</option>
+					<option value="Simon Williams Centre (SWC)">Simon Williams Centre (SWC)</option>
+					<option value="Sinclair (SNC)">Sinclair (SNC)</option>
+					<option value="Swindon (SWI)">Swindon (SWI)</option>
+					<option value="T Block (TBW)">T Block (TBW)</option>
+					<option value="Tonge (TON)">Tonge (TON)</option>
+					<option value="Turing (TBW)">Turing (TBW)</option>
+					<option value="Willow (WLW)">Willow (WLW)</option>
+					<option value="WT (WT)">WT (WT)</option>
+				</select>
+			</p>
+            <p>
+                <label class="text-label" for="room">Room:</label>
+                <input type="text" id="room" name="room" placeholder="Room number" value="">
+            </p>
+            <div>
+                <label class="radiogroup-label">Preferred means of contact:</label>
+				<radiogroup>
+				<div class="radio-container">
+					<ul>
+						<li><input type="radio" name="preferred" id="no_pref" value="No preference" checked="true"> <label class="radio-label" for="no_pref">No preference</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_mobile1" value="Mobile 1"> <label class="radio-label" for="by_mobile1">Mobile 1</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_mobile2" value="mobile 2"> <label class="radio-label" for="by_mobile2">Mobile 2</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_home_landline" value="Home landline"> <label class="radio-label" for="by_home_landline">Home landline</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_work_landline" value="Work landline"> <label class="radio-label" for="by_work_landline">Work landline</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_home_email" value="Home email"> <label class="radio-label" for="by_home_email">Home email</label> <div class="check"></div></li>
+						<li><input type="radio" name="preferred" id="by_work_email" value="Work email"> <label class="radio-label" for="by_work_email">Work email</label> <div class="check"></div></li>
+					</ul>
+				</div>
+				</radiogroup>
+            </div>
+			<div>
+                <label class="radiogroup-label">Can edit directory entries:</label>
+				<radiogroup>
+				<div class="radio-container">
+					<ul>
+						<li><input type="radio" name="application_access" id="is_admin" value="Admin"> <label class="radio-label" for="is_admin">Yes</label> <div class="check"></div></li>
+						<li><input type="radio" name="application_access" id="is_user" value="User" checked="checked"> <label class="radio-label" for="is_user">No</label> <div class="check"></div></li>
+					</ul>
+				</div>
+				</radiogroup>
+            </div>
+            <p>
+				<label class="text-label">&nbsp;</label>
+                <button type="submit" class="submit">Save Contact</button>
+            </p>
+        </form>
+       </section>
+        <section id="allnotes" class="hide">
+            <h2>Contacts</h2>
+            <form id="searchnotes" method="get">
+                <p>
+                    <label class="search-label" for="q">Search</label>
+                    <input type="search" id="q" name="q">
+                    <button type="submit" class="submit search"><img src="img/searchws.png" alt="Search"/></button>
+                </p>
+            </form>
+            <table id="notelist" class="stripy">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Job title</th>
+                        <th>Access</th>
+                       <!--  <th>Created</th>
+                        <th>Updated</th> -->
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <div id="syncdialog" class="dialog hide" data-action="close">
+        <div>
+            <button type="button" class="close" data-action="close">Close</button>
+            <h1>Sync-ing data</h1>
+            <div class="progressbar">
+            	<progress max="100"></progress>
+            </div>
+        </div>
+    </div>
+    <div id="errordialog" class="dialog hide" data-action="close">
+        <div>
+            <button type="button" data-action="close"></button>
+            <h1>Error</h1>
+            <div class="msg"></div>
+        </div>
+    </div>
+    <footer>
+            <a href="licence.html">Licence</a>
+    </footer>
+
+	<script src="js/pouchdb-6.3.4.min.js"></script>
+	<script src="js/pouch-db-min-full-sync.js"></script>
+	<script src="js/pouchdb.authentication.js"></script>
+    <script src="js/application.js"></script>
+
+    <script src="js/resp-header.js"></script>
+	<script src="js/gapi.js"></script>
+    <script async defer src="js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+</body>
+</html>

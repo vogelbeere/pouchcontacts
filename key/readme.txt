@@ -1,0 +1,1 @@
+Put your public key in here for logging into Bitnami instance on Google Cloud.

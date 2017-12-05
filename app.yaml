@@ -1,0 +1,76 @@
+application: brookes-critical-incidents
+version: 4
+runtime: python27
+api_version: 1
+threadsafe: false
+
+handlers:
+ 
+- url: /
+  script: main.py
+  
+- url: /(favicon)\.ico$
+  static_files: \1.ico
+  upload: /(favicon)\.ico
+  application_readable: true
+  
+- url: /(package)\.json$
+  static_files: \1.json
+  upload: /(package)\.json
+  application_readable: true
+  
+  # Serve images as static resources #
+- url: /(.+\.(gif|png|jpg|json|ico))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|json|ico)$
+  application_readable: true
+
+   
+- url: /index.html
+  static_files: index.html
+  upload: index.html 
+  
+- url: /licence.html
+  static_files: licence.html
+  upload: licence.html 
+  
+- url: /privacy.html
+  static_files: privacy.html
+  upload: privacy.html 
+  
+- url: /pouchnotes.manifest
+  static_files: pouchnotes.manifest
+  upload: pouchnotes.manifest  
+  
+- url: /manifest.json
+  static_files: manifest.json
+  upload: manifest.json
+  
+  # static directories #
+
+- url: /img
+  static_dir: img
+
+- url: /js
+  static_dir: js
+
+- url: /css
+  static_dir: css
+ 
+  
+libraries:
+- name: webapp2
+  version: "2.5.2"
+  
+
+network:
+  forwarded_ports:
+   - 5984/tcp
+   
+
+env_variables:
+
+  COUCHDB_CONNECTION_NAME: 
+  COUCHDB_USER: 
+  COUCHDB_PASSWORD: 
+  COUCHDB_DATABASE: 

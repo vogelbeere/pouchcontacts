@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-gb" manifest="pouchnotes.manifest">
+    <head>
+        <title>Log in | Critical Incidents</title>
+    </head>
+<body>
+    <header>
+        <h1>Contacts for Critical Incidents</h1>
+        <nav>
+            <button type="button" class="clicktarget" data-action="viewnoteset" data-show="#allnotes" data-hide="section:not(#allnotes)">View Contacts</button> 
+        	<button type="button" class="clicktarget" data-show="#addnote" data-hide="section:not(#addnote)">Add Contact</button> 
+        </nav>
+    </header>
+    
+    <main>
+		 <section id="login">
+			<form id="loginform" method="post" data-show="#allnotes" data-hide="#addnote">
+				<h2>Log in</h2>
+				<p>
+					<label class="text-label" for="username">Username:</label>
+					<input type="text" id="theusername" name="theusername" placeholder="Brookes email" value="">
+				</p>
+				<p>
+					<label class="text-label" for="thepassword">Password:</label>
+					<input type="password" id="theassword" name="thepassword" placeholder="********" value="">
+				</p>
+				<p>
+						<label class="text-label">&nbsp;</label>
+						<button type="submit" class="submit">Log in</button>
+				</p>
+			</form>
+		</section> 
+	</main>    
+    <footer>
+            <a href="licence.html">App Licence</a> | Data &copy; <a href="http://www.brookes.ac.uk">Oxford Brookes University</a> | <a href="https://www.brookes.ac.uk/about-brookes/structure-and-governance/policies-and-financial-statements/privacy-policy/">Privacy Policy</a>
+    </footer>
+  <script src="js/login.js"></script>
+</body>
+</html>

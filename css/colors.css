@@ -1,0 +1,163 @@
+﻿/* *** BROOKES COLOURS  ***
+
+Primary colour palette
+LIME: #9eab05   CHARCOAL: #424a52   PINK: #d10373
+
+Secondary colour palette
+    PURPLE: #6a2150 
+    RED: #c70540
+    YELLOW: #e3ba12
+    GOLD: #f49103
+    AQUA: #0085a1
+    BLUE: #003896
+    GREEN: #006338
+
+Neutral colour palette
+    Mid grey: #adafaf
+    Light grey: #f3f3f3
+*/
+body {
+	background-color:#fff;
+	color: #424a52;
+
+}
+
+.stripy thead tr {
+	background-color: #0085a1;
+	color: #fff;
+}
+.stripy li:nth-child(odd), 
+.stripy tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.stripy li:nth-child(even), 
+.stripy tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.tabrow li.selected {
+  background: #FFF;
+  color: #000;
+}
+
+header {
+	background-color: #fff;
+	}
+	
+.error, .help-block, .alert-danger {
+    color: #c70540;
+}
+
+.warning {
+    color: #e3ba12;
+    background-color: #424a52;
+}
+
+.success {
+    color: #4B946A;
+}
+
+.overlay {
+	opacity: 0.7;
+	background: #424a52;
+}
+
+footer, .bottom {
+    background-color: #424a52;
+    color: #fff;
+	box-shadow: 0 -3px 5px 0px #adafaf;
+}
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #ffffff;
+    border-bottom: 1px solid #9eab05;
+}
+
+
+/* buttons */
+
+.button {
+    box-shadow: #adafaf 3px 2px 3px;
+    color: #fff;
+}
+
+.cta {                          /* call to action */
+    background-color: #d10373;
+    color: #fff;
+}
+
+.secondary {
+    background-color: #0085a1;
+    color: #FFFFFF;
+}
+
+.ok {
+    background-color: #4B946A;
+    color: #FFFFFF;
+}
+
+.cancel {
+    background-color: #c70540;
+    color: #FFFFFF;
+}
+
+.toolbar {
+    background-color: #adafaf;
+}
+
+button.edit {
+	background-color: #5e6603;
+	color: #fff;
+}
+
+button.cancel, button.delete {
+	background-color: #770326;
+	color: #fff;
+}
+
+button.submit {
+	background-color: #d10373;
+	color: #fff;
+}
+
+  
+nav a, nav button {
+	  background-color: #fff;
+  }
+
+
+nav a:hover, nav button:hover {
+  border-bottom: 2px solid #d10373 !important;
+}
+
+/* radio buttons */
+
+.radio-container ul li{
+  color: #424a52;
+  border-bottom: 1px solid #adafaf;
+}
+
+.radio-container ul li .check {
+  border: 5px solid #424a52;
+}
+
+.radio-container ul li:hover label{
+	color: #000000;
+}
+
+
+.radio-container input[type=radio]:checked ~ .check {
+  border: 5px solid #d10373;
+}
+
+.radio-container input[type=radio]:checked ~ .check::before{
+  background: #d10373;
+}
+
+.radio-container input[type=radio]:checked ~ label{
+  color: #d10373;
+}
