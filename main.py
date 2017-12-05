@@ -23,8 +23,6 @@ application = webapp.WSGIApplication(
         ('/', MainPage)], 
     debug=True)
 
-# ssh -N -L 5984:127.0.0.1:5984 -i ppk-google-cloud-couchdb-admin bitnami@35.195.181.16
-# requests.get('http://bitnami@35.195.181.16%0A%0Acurl')
 
 
 
@@ -33,37 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-	
-# https://github.com/BauweBijl/gaecors
-
-# Enable CORS (Cross-Origin Resource Sharing) with static hosted content on Google Appengine
-
-	
-# couchDbConnName = os.environ.get("COUCHDB_CONNECTION_NAME")
-# couchDbUser = os.environ.get("COUCHDB_USER")
-# couchDbPassword = os.environ.get("COUCHDB_PASSWORD")
-# couchDb = os.environ.get("COUCHDB_DATABASE")
-
-# URL = 'http://localhost:5984/_session'
-# CONSUMER_KEY = 'consumer1'
-# CONSUMER_SECRET = 'sekr1t'
-# TOKEN = 'token1'
-# SECRET = 'tokensekr1t'
-
-# consumer = oauth.OAuthConsumer(CONSUMER_KEY, CONSUMER_SECRET)
-# token = oauth.OAuthToken(TOKEN, SECRET)
-# req = oauth.OAuthRequest.from_consumer_and_token(
-    # consumer,
-    # token=token,
-    # http_method='GET',
-    # http_url=URL,
-    # parameters={}
-# )
-# req.sign_request(oauth.OAuthSignatureMethod_HMAC_SHA1(), consumer,token)
-
-# headers = req.to_header()
-# headers['Accept'] = 'application/json'
-
-# con = httplib.HTTPConnection('localhost', 5984)
-# con.request('GET', URL, headers=headers)
-# resp = con.getresponse()
