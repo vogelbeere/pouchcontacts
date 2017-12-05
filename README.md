@@ -8,7 +8,7 @@ Sync function by [Manav Manocha @manavmanocha](https://github.com/manavmanocha/p
 
 [Licensed under Apache License Version 2.0, January 2004](https://github.com/vogelbeere/pouchcontacts/blob/master/LICENSE)
 
-###Purpose
+### Purpose
 
 The purpose of this app is to be able to edit contacts in PouchDB on your local device and sync them with CouchDB on a remote server (this app is set up for Google App Engine).
 
