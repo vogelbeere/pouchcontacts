@@ -8,7 +8,7 @@ Sync function by [Manav Manocha @manavmanocha](https://github.com/manavmanocha/p
 
 [Licensed under Apache License Version 2.0, January 2004](https://github.com/vogelbeere/pouchcontacts/blob/master/LICENSE)
 
-[Enable CORS function by Bauwe Bijl]((https://github.com/BauweBijl/gaecors))
+[Enable CORS function by Bauwe Bijl](https://github.com/BauweBijl/gaecors)
 
 ### Purpose
 
